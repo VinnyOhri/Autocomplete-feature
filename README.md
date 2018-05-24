@@ -18,13 +18,13 @@ The disadvantage with Trie is that since it is a prefix data structure, a word c
 
 Another example is to find the distinct words from a text file. At first, I thought of a Hashmap which acts like a boolean array for the words as index. In which case, the time required is O(n) and space required is that of the distinct words. With Trie, the solution is better and elegant in terms of space required (time required is O(n)). In case of words ‘anon’, ‘an’, ‘a’, the Trie formed (”-a–n-o-n) would just need space for a-n-o-n. Thus, the advantages of Trie would show over a Hashmap when many words have overlapping prefixes. Once the Trie is formed, a DFS would print the distinct words as follows.
 
-//do DFS on the trie
+do DFS on the trie
 StringBuilder sb = new StringBuilder()
 dfs(root, sb)
 void dfs(trieNode node, StringBuilder sb):
     sb.append(node.c)
     
-    if (node.countWord > 0):
+     if (node.countWord > 0):
         print(sb)
     
     for (trieNode child : node.children)
