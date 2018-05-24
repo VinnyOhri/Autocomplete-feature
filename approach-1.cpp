@@ -1,7 +1,6 @@
 # include <iostream>
 # define CHAR_SIZE 26
 using namespace std;
-
 typedef struct trieNode
 {
   struct trieNode * chars[CHAR_SIZE];
@@ -146,8 +145,6 @@ int autoComplete(node * curr, const char * key){
     return -3;
   
 }
-
-
 //////////////////////////////////////////////////////////////////////////////////////
 
 int main(){
