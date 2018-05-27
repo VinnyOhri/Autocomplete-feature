@@ -46,10 +46,8 @@ void insert(TrieNode * node, const char * word)
   }
   x->isLeaf=true;
 }
-
-
 void autoComplete(TrieNode * node,const char * word)
-{\
+{
   const char * str = word;
   TrieNode * back;
   if(node==NULL)
@@ -72,7 +70,7 @@ void autoComplete(TrieNode * node,const char * word)
     cout<<str<<endl;
   for(set <string>::iterator i = node->s.begin(); i != node->s.end(); i++) 
   {
-   		strin g element = *i;
+   		string element = *i;
    		printf("%s",str);
    		cout <<element<<endl;
   }
