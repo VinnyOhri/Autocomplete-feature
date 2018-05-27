@@ -15,7 +15,6 @@ node * CreateNode()
   x->isLeaf = false;
   for(int i=0 ; i<CHAR_SIZE ; i++)
     x->chars[i]=NULL;
-  
   return x;
 }
 
@@ -61,38 +60,6 @@ bool haveChildren(node * curr)
   return false;
 }
 
-////////////////////////////////////////////////////////////////////////////////////
-
-bool deletion ( node *& curr ,const char *key)
-{
-  if(curr== NULL)
-    return false;
-  if (*key)
-  {
-    if( curr->chars[*key - 'a'] != NULL && deletion(curr->chars[*key - 'a'],key + 1) && curr->isLeaf == false && !haveChildren(curr))
-    {
-      free(curr);
-      curr = NULL;
-      return true;
-    }
-  }
-  if (* key == '\0' && curr->isLeaf)
-  {
-    if (!haveChildren(curr))
-    {
-      free(curr);
-      curr = NULL;
-      return true; 
-    }
-    else
-    { 
-      curr->isLeaf = false;
-      return false; 
-    }
-  }
-return false;
-}
-
 /////////////////////////////////////////////////////////////////////////////////////
 
 void printSuggestions(node * curr, string suggestion){
@@ -115,7 +82,6 @@ void printSuggestions(node * curr, string suggestion){
 }
 
 //////////////////////////////////////////////////////////////////////////////////////
-
 
 int autoComplete(node * curr, const char * key){
   const char * str = key;
