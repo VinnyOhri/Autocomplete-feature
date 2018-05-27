@@ -62,14 +62,13 @@ bool haveChildren(node * curr)
 
 /////////////////////////////////////////////////////////////////////////////////////
 
-void printSuggestions(node * curr, string suggestion){
+void printSuggestions(node * curr, string suggestion)
+{
   string str = suggestion;
   if(curr->isLeaf)
     cout<<suggestion<<endl;
-
   if(!haveChildren(curr))
     return;
-
    for(int i=0; i<CHAR_SIZE ;i++)
    {
       suggestion= str;
@@ -83,7 +82,8 @@ void printSuggestions(node * curr, string suggestion){
 
 //////////////////////////////////////////////////////////////////////////////////////
 
-int autoComplete(node * curr, const char * key){
+int autoComplete(node * curr, const char * key)
+{
   const char * str = key;
   if(curr==NULL)
     return 0;
