@@ -12,7 +12,6 @@ typedef struct TrieNode
   bool isLeaf;
 }TrieNode;
 
-
 TrieNode * getNode()
 {    
   TrieNode * node= new TrieNode;
@@ -59,7 +58,7 @@ void autoComplete(TrieNode * node,const char * word)
   {
     if(node->child[*word-'a']==NULL)
     {
-      cout<<"no words with this prefix present"<<endl;
+      cout<<"No words with this prefix present"<<endl;
       return;
     }
     back= node;
